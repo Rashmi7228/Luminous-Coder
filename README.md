@@ -168,7 +168,3 @@ Team Name: Luminous Coders
 ## Conclusion
 
 This project provides a practical solution for rural healthcare by combining offline-first architecture with real-time risk detection. It enables ASHA workers to deliver timely and accurate healthcare services even in areas with limited connectivity.
-
----
-
-This is lean, readable, and safe for evaluation. If anything gets challenged in viva, you can defend every line without improvising.
