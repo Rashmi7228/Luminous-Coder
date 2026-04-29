@@ -1,74 +1,233 @@
-# Luminous-Coder
+# 🏥 Luminous Coders
 
-Offline-first digital assistant for ASHA workers to collect patient data, detect health risks, and sync with a central system for monitoring and reporting.
+## Offline-First Healthcare Assistant for ASHA Workers
 
-## Project Overview
-Village Health Worker Digital Assistant is designed to support ASHA workers in rural areas by digitizing healthcare data collection and enabling real-time risk identification, even without internet connectivity.
+---
 
-## Problem
-In rural India, ASHA workers collect critical health data such as pregnancy details, vaccinations, and TB follow-ups using paper registers. This leads to delayed reporting, missed high-risk cases, manual errors, data loss, and poor coordination with healthcare officials.
+## 📌 Project Overview
 
-## Solution
-This project provides an offline-first digital system that enables ASHA workers to collect patient data through a mobile application, detect high-risk cases instantly, work without internet connectivity, and synchronize data with a central server when connectivity becomes available.
+The **Offline-First Healthcare Assistant** is a mobile and web-based system designed to help ASHA workers digitize patient data, detect health risks early, and ensure continuous operation even without internet connectivity.
 
-## Why We Built This
-During the hackathon, we focused on real-world challenges faced by ASHA workers in rural areas. The major issue identified was unreliable internet access combined with manual record keeping. To address this, we designed a system that functions completely offline and ensures continuous usability in low-resource environments.
+The system replaces paper-based records with a **reliable digital workflow**, improving accuracy, efficiency, and coordination with healthcare authorities.
 
-## Key Features
+---
 
-### Mobile App (React Native)
-- Offline data entry using SQLite  
-- Simple interface for non-technical users  
-- Manual sync option  
-- Works without internet  
+## 🚨 Problem Statement
 
-### Risk Detection
-- Blood Pressure > 140 → High Risk  
-- Missed vaccination → Medium Risk  
-- TB-related symptoms → High Risk  
+In rural India, ASHA workers manage:
 
-### Backend (Node.js and Express)
-- REST APIs for syncing data  
-- Centralized storage using MongoDB  
+* Pregnancy records
+* Child vaccinations
+* TB patient monitoring
 
-### Web Dashboard
-- View patient records  
-- Highlight high-risk cases  
-- Filter by date and risk level  
+Using paper registers leads to:
 
-### Reports
-- Generate CSV reports  
+* Delayed reporting
+* Missed high-risk cases
+* Data loss and duplication
+* Lack of real-time monitoring
 
-## Our Approach
-The system follows an offline-first architecture:
-- Data stored locally using SQLite  
-- Records tagged as pending or synced  
-- Only unsynced data is uploaded  
-- Risk detection is performed on-device  
+---
 
-## Architecture
-Mobile App  
-↓  
-Local SQLite Database  
-↓  
-Backend API (Node.js)  
-↓  
-MongoDB Database  
-↓  
-Web Dashboard  
+## 💡 Solution
 
-## Data Flow
-1. Data entered in mobile app  
-2. Stored locally  
-3. Risk calculated  
-4. Marked as pending  
-5. Synced when internet is available  
-6. Stored in database  
-7. Displayed in dashboard  
+We developed an **offline-first system** that:
 
-## Tech Stack
-- React Native  
-- React.js  
-- Node.js, Express  
-- SQLite  
-- MongoDB  
+* Works without internet
+* Stores data locally on the device
+* Detects health risks instantly
+* Syncs data to a central server when online
+
+---
+
+## ⚙️ Key Features
+
+### 📱 Mobile Application (React Native)
+
+* Offline data entry using SQLite
+* Simple interface for ASHA workers
+* Manual sync option
+* Works in low/no network areas
+
+---
+
+### ⚠️ Risk Detection (On-Device)
+
+* Blood Pressure > 140 → High Risk
+* Missed Vaccination → Medium Risk
+* TB Symptoms → High Risk
+
+---
+
+### 🔄 Offline-First Sync System
+
+* Local storage using SQLite
+* Records marked as:
+
+  * Pending
+  * Synced
+* Only unsynced data is uploaded
+
+---
+
+### 🌐 Backend (Node.js + Express)
+
+* REST APIs for data synchronization
+* Handles secure communication
+* Processes incoming patient data
+
+---
+
+### 🗄️ Database
+
+* Local: SQLite (Mobile)
+* Server: MySQL
+
+---
+
+### 📊 Web Dashboard
+
+* View patient records
+* Highlight high-risk cases
+* Filter by region, date, and risk level
+
+---
+
+### 📑 Reports
+
+* Generate CSV reports for monitoring and analysis
+
+---
+
+### 👩‍⚕️ Regional Access Control
+
+* ASHA workers login with assigned region
+* Access restricted to their local patients only
+
+---
+
+### 🆔 Smart Patient Identification
+
+* Aadhaar number (mandatory)
+* Ration card (optional)
+* Prevents duplicate records
+
+---
+
+### 💉 Vaccination Tracking
+
+* Track child vaccination schedules
+* Alerts for:
+
+  * Upcoming vaccines
+  * Missed vaccinations
+* View vaccination history
+
+---
+
+### 🦠 TB Monitoring
+
+* Detect TB risk based on symptoms
+* Alert ASHA workers for early action
+
+---
+
+## 🧠 Advanced Features (Planned Enhancements)
+
+### 🎙️ Multilingual Voice Assistant
+
+* Voice input in regional languages
+* Responses in voice/text
+
+---
+
+### 🥗 Smart Nutrition Support
+
+* Food scan for nutrition estimation
+* Diet recommendations
+* Focus on:
+
+  * Pregnant women
+  * Vegetarian nutrition (Vitamin B12 awareness)
+
+---
+
+### 🤰 Pregnancy Care Module
+
+* Weekly health tips
+* Diet plans
+* Exercise guidance (video, voice, text)
+
+---
+
+### 💊 Prescription Validation
+
+* Detect fake or invalid prescriptions
+
+---
+
+### 🔔 Smart Alerts System
+
+* TB alerts to supervisors/doctors
+* Polio vaccination reminders
+
+---
+
+## 🏗️ System Architecture
+
+Mobile App
+↓
+SQLite (Local Database)
+↓
+Backend API (Node.js + Express)
+↓
+MySQL Database
+↓
+Web Dashboard
+
+---
+
+## 🔄 Data Flow
+
+1. ASHA worker enters patient data
+2. Data stored locally in SQLite
+3. Risk detection performed on-device
+4. Record marked as pending
+5. Sync triggered when internet is available
+6. Data sent to backend API
+7. Stored in MySQL database
+8. Displayed on web dashboard
+
+---
+
+## 🧰 Tech Stack
+
+* **Mobile:** React Native
+* **Web:** React.js
+* **Backend:** Node.js, Express
+* **Database:** SQLite, MySQL
+
+---
+
+## 🔮 Future Scope
+
+* AI-based food recognition
+* Voice-enabled healthcare assistant
+* Machine learning for disease prediction
+* Integration with government healthcare systems
+
+---
+
+## 👥 Team
+
+**Team Name:** Luminous Coders
+
+---
+
+## 📢 Conclusion
+
+This project delivers a **practical and scalable solution** for rural healthcare by combining offline-first architecture with real-time risk detection. It ensures ASHA workers can provide **timely and accurate healthcare services**, even in areas with poor connectivity.
+
+
+Next logical step (don’t skip this):
+👉 Add **screenshots + UI images + flow diagram** — without visuals, your repo looks incomplete.
