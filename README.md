@@ -161,10 +161,6 @@ Web Dashboard
 * Machine learning for disease prediction
 * Integration with government healthcare systems
 
-## Team
-
-Team Name: Luminous Coders
-
 ## Conclusion
 
 This project provides a practical solution for rural healthcare by combining offline-first architecture with real-time risk detection. It enables ASHA workers to deliver timely and accurate healthcare services even in areas with limited connectivity.
