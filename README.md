@@ -1,121 +1,80 @@
 # Luminous-Coder
 Offline-first digital assistant for ASHA workers to collect patient data, detect health risks, and sync with a central system for monitoring and reporting.
 
-
 # Village Health Worker Digital Assistant
 
-## 📌 Problem
-In rural India, ASHA workers collect critical health data (pregnancy, vaccinations, TB follow-ups) using paper registers. This leads to:
-- Delayed reporting
-- Missed high-risk cases
-- Manual errors and data loss
-- Poor coordination with healthcare officials
+## Problem
+In rural India, ASHA workers collect critical health data such as pregnancy details, vaccinations, and TB follow-ups using paper registers. This leads to delayed reporting, missed high-risk cases, manual errors, data loss, and poor coordination with healthcare officials.
 
----
+## Solution
+This project provides an offline-first digital system that enables ASHA workers to collect patient data through a mobile application, detect high-risk cases instantly, work without internet connectivity, and synchronize data with a central server when connectivity becomes available.
 
-## 💡 Solution
-An **offline-first digital system** that enables ASHA workers to:
-- Collect patient data using a mobile app
-- Detect high-risk cases instantly
-- Work without internet connectivity
-- Sync data to a central server when online
+## Why We Built This
+During the hackathon, we focused on real-world challenges faced by ASHA workers in rural areas. The major issue identified was unreliable internet access combined with manual record keeping. To address this, we designed a system that functions completely offline and ensures continuous usability in low-resource environments.
 
----
+## Key Features
 
-## 🤔 Why We Built This
-During our hackathon, we focused on real challenges faced by ASHA workers in rural areas.  
-We identified that unreliable internet connectivity and manual record-keeping were the biggest bottlenecks.
-
-So instead of building a typical online system, we designed a solution that works **completely offline first**, ensuring uninterrupted usage in low-resource environments.
-
----
-
-## 🚀 Key Features
-
-### 📱 Mobile App (React Native)
+### Mobile App (React Native)
 - Offline data entry using SQLite
-- Simple UI designed for non-technical users
-- Sync button for uploading data
-- Works without internet
+- Simple interface designed for non-technical users
+- Manual sync option to upload data
+- Fully functional without internet
 
-### 🧠 Risk Detection
-Rule-based logic implemented directly in the mobile app:
-- Blood Pressure > 140 → **High Risk**
-- Missed Vaccination → **Medium Risk**
-- TB Symptoms → **High Risk**
+### Risk Detection
+Rule-based logic implemented within the mobile app:
+- Blood Pressure greater than 140 is marked as High Risk
+- Missed vaccination is marked as Medium Risk
+- TB-related symptoms are marked as High Risk
 
-### 🌐 Backend (Node.js + Express)
+### Backend (Node.js and Express)
 - REST APIs for syncing patient data
-- Centralized storage in MongoDB
-- Handles multiple records efficiently
+- Centralized data storage using MongoDB
+- Efficient handling of multiple records
 
-### 💻 Web Dashboard
+### Web Dashboard
 - View all patient records
 - Highlight high-risk cases
-- Filter by date and risk level
+- Filter data by date and risk level
 
-### 📊 Reports
+### Reports
 - Generate downloadable CSV reports
-- Useful for administrative and government use
+- Useful for administrative and government purposes
 
----
+## Our Approach
+The system follows an offline-first architecture. Data is first stored locally using SQLite. Each record is tagged with a sync status such as pending or synced. A manual sync operation uploads only unsynced records to the backend. Risk detection is performed on the device itself, ensuring uninterrupted usage without internet.
 
-## 🧠 Our Approach
-We followed an **offline-first architecture**:
-
-- Data is first stored locally using SQLite
-- Each record is tagged with a sync status (`pending` / `synced`)
-- A manual sync button uploads only unsynced data
-- Risk detection is performed on-device
-
-This ensures the system works even with zero internet connectivity.
-
----
-
-## 🏗️ Architecture
+## Architecture
 
 Mobile App (Offline First)  
-        ↓  
 Local SQLite Database  
-        ↓ (Sync when online)  
 Node.js Backend (API)  
-        ↓  
 MongoDB Database  
-        ↓  
 Web Dashboard  
 
----
-
-## 🔄 Data Flow
-1. ASHA worker enters patient data  
-2. Data is stored locally in SQLite  
-3. Risk level is calculated instantly  
-4. Record is marked as **pending**  
-5. On internet availability → user clicks Sync  
+## Data Flow
+1. Data is entered in the mobile application  
+2. Stored locally in SQLite  
+3. Risk level is calculated immediately  
+4. Record is marked as pending  
+5. When internet is available, user initiates sync  
 6. Data is sent to backend API  
-7. Stored in MongoDB and displayed in dashboard  
+7. Stored in MongoDB and displayed on dashboard  
 
----
+## Key Implementation Details
+- UUIDs are used to uniquely identify patient records  
+- Sync mechanism prevents duplicate uploads  
+- Lightweight UI designed for ease of use  
+- Risk detection is performed locally on the device  
 
-## ⚙️ Key Implementation Details
-- Used **UUIDs** to uniquely identify each patient record  
-- Implemented **sync mechanism** to avoid duplicate uploads  
-- Designed **lightweight UI** for ease of use  
-- Applied **rule-based risk detection** locally on device  
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 - Mobile: React Native  
 - Web: React.js  
 - Backend: Node.js, Express  
 - Database: SQLite (local), MongoDB (server)  
 
----
+## Setup Instructions
 
-## ⚙️ Setup Instructions
-
-### 1. Clone Repository
+### Clone Repository
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
