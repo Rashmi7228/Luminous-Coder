@@ -161,6 +161,24 @@ Web Dashboard
 * Machine learning for disease prediction
 * Integration with government healthcare systems
 
+
+## Output :
+<img width="1600" height="850" alt="1" src="https://github.com/user-attachments/assets/18e0b24d-aec5-4bbd-9b2f-a35f388d7213" />
+
+<img width="1600" height="850" alt="2" src="https://github.com/user-attachments/assets/1faa9422-8d4d-48e2-b5c0-7be2892b40e2" />
+
+<img width="1600" height="850" alt="3" src="https://github.com/user-attachments/assets/bcccc19d-9f8e-4f6d-aa5b-22cc1add2344" />
+
+<img width="1600" height="850" alt="4" src="https://github.com/user-attachments/assets/436744aa-d25f-49d0-9023-620571a175b8" />
+
+<img width="1600" height="850" alt="5" src="https://github.com/user-attachments/assets/9e16d856-2d3e-4a54-9c7b-6658c01303fd" />
+
+<img width="1600" height="850" alt="6" src="https://github.com/user-attachments/assets/14dd74d0-081c-4919-a817-956c9ea36473" />
+
+<img width="1600" height="850" alt="7" src="https://github.com/user-attachments/assets/005d728e-5102-483f-977f-88f1858e09d3" />
+
+
+
 ## Conclusion
 
 This project provides a practical solution for rural healthcare by combining offline-first architecture with real-time risk detection. It enables ASHA workers to deliver timely and accurate healthcare services even in areas with limited connectivity.
