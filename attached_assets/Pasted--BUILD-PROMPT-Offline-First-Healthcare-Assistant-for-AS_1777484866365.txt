@@ -1,0 +1,141 @@
+
+🚀 BUILD PROMPT: Offline-First Healthcare Assistant for ASHA Workers
+Build a React + Vite offline-first healthcare assistant system for ASHA workers in rural India.
+The project must be fully runnable in VS Code on Windows using a simple setup (npm install → npm run dev).
+No backend, no authentication, no external database.
+________________________________________
+🧰 TECH STACK
+•	React (Vite)
+•	Tailwind CSS
+•	IndexedDB (using idb library)
+•	Web Speech API (Voice input + output)
+•	QR Code generator library (for app access link)
+________________________________________
+⚠️ CORE REQUIREMENT
+This is a 100% offline-first system:
+•	All patient data stored locally in IndexedDB
+•	Works without internet
+•	Sync is simulated only (no backend)
+________________________________________
+🌟 CORE MODULES (FULL SYSTEM)
+________________________________________
+1. PATIENT MANAGEMENT SYSTEM (ROLE-BASED FORMS)
+ASHA workers can create and manage patients using separate forms:
+•	Pregnancy patients form
+•	Child/baby health form
+•	General patient form
+Fields:
+Name, Age, Village, BP, Pregnancy Week, Vaccination Status, TB Symptoms
+Features:
+•	Add patient
+•	Edit patient
+•	Delete patient
+•	Update records
+•	Stored locally in IndexedDB
+________________________________________
+2. AI RISK DETECTION (OFFLINE ENGINE)
+Run local rule-based logic instantly:
+•	🔴 HIGH RISK:
+o	Pregnancy week > 36
+o	TB symptoms = yes
+o	BP High / Low
+o	Missed vaccines ≥ 2
+•	🟡 MEDIUM RISK
+•	🟢 LOW RISK
+Show color-coded risk badges on patient cards.
+________________________________________
+3. HEALTH EDUCATION MODULE (OFFLINE KNOWLEDGE BASE)
+Include built-in medical guidance for patients:
+•	TB awareness (symptoms, prevention)
+•	Vaccination schedule (Polio drops + child immunization)
+•	Pregnancy care (monthly checkup reminders)
+•	Nutrition guide (food recipes rich in vitamins & minerals for baby development)
+This section must work fully offline.
+________________________________________
+4. VOICE INPUT + MULTILINGUAL SUPPORT
+Use Web Speech API:
+•	Voice-to-text input (Hindi + regional languages like Kannada)
+•	Text-to-speech responses
+•	User can toggle between voice and text mode
+________________________________________
+5. ALERT SYSTEM (DOCTOR + SUPERVISOR NOTIFICATION)
+•	Automatically flag high-risk patients
+•	Show alerts in dashboard
+•	Notify:
+o	Doctor dashboard
+o	Supervisor dashboard
+(No backend — simulated alerts only)
+________________________________________
+6. ROLE-BASED DASHBOARDS
+ASHA WORKER DASHBOARD
+•	Add/edit/delete patients
+•	View risk status
+•	Manage forms
+DOCTOR DASHBOARD
+•	View ALL patients
+•	Full medical details
+•	Risk levels + BP + TB + vaccination history
+SUPERVISOR DASHBOARD
+•	Total patients
+•	High-risk cases
+•	Pregnancy cases
+•	TB flagged cases
+•	Alert summary
+________________________________________
+7. PATIENT PORTAL (RESTRICTED ACCESS)
+•	Patients can only view their data if ASHA has entered it
+•	If no data exists show:
+👉 “No records found. Please contact your ASHA worker.”
+________________________________________
+8. SYNC SIMULATOR (NO BACKEND)
+•	Online/Offline status using navigator.onLine
+•	“Sync Now” button
+•	Simulated upload animation
+•	Toast: “X records synced successfully”
+________________________________________
+9. QR CODE ACCESS SYSTEM
+Generate a QR code inside the app that:
+•	Opens the deployed app or local hosted URL
+•	Works on mobile scanning
+•	Gives access to:
+o	App (ASHA worker view)
+o	Dashboard routes
+Example routes:
+•	/ → ASHA App
+•	/dashboard → Doctor/Supervisor dashboard
+________________________________________
+🎨 UI REQUIREMENTS
+•	Mobile-first design
+•	Card-based layout
+•	Indian tricolor theme (saffron / white / green)
+•	Large touch-friendly buttons
+•	Clean medical dashboard UI
+________________________________________
+🗂️ IMPORTANT ARCHITECTURE RULES
+•	No backend
+•	No authentication system
+•	No external database
+•	Everything stored in IndexedDB
+•	Works fully inside browser
+•	Must run directly in VS Code using Vite
+________________________________________
+🔄 SYSTEM WORKFLOW
+1.	ASHA enters patient data (voice/text)
+2.	Data stored in IndexedDB (offline)
+3.	Risk engine analyzes instantly
+4.	Patient gets risk level (Red / Yellow / Green)
+5.	Alerts sent to doctor/supervisor dashboards
+6.	Educational content available offline
+7.	Sync runs only when internet available (simulated)
+________________________________________
+💡 DEMO REQUIREMENTS
+•	Must run in VS Code (Windows) using:
+•	npm install
+•	npm run dev
+•	Demonstrate:
+o	Offline mode (DevTools → offline toggle)
+o	Risk detection
+o	Voice input
+o	Dashboard switching
+o	Sync simulation
+o	QR code opening app

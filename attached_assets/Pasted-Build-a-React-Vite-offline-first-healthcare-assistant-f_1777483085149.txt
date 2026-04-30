@@ -1,0 +1,77 @@
+Build a React + Vite offline-first healthcare assistant for ASHA workers in rural India.
+STACK: React, Tailwind CSS, IndexedDB (via idb library), Web Speech API
+________________________________________
+4 CORE FEATURES ONLY:
+________________________________________
+1. PATIENT INTAKE FORM
+Simple form to collect Name, Age, Village, Pregnancy Week,
+Vaccination Status, TB Symptoms.
+Save to IndexedDB instantly (works offline).
+Show a card list of all saved patients.
+________________________________________
+2. AI RISK FLAGGING
+On form submit, run local rule-based logic:
+Flag RED if pregnancy week > 36 with no hospital visit,
+or TB symptoms = yes,
+or missed 2+ vaccines.
+Show a color-coded risk badge (🔴 High / 🟡 Medium / 🟢 Low)
+on each patient card.
+________________________________________
+3. SYNC SIMULATOR
+Show a live connectivity banner (Online/Offline using navigator.onLine).
+Add a "Sync Now" button that — when online — animates a mock upload
+and shows "X records synced" toast.
+Use Web Speech API for a voice input toggle on the form
+(Hindi/English).
+________________________________________
+4. SUPERVISOR DASHBOARD
+Add a simple web dashboard route (/dashboard).
+Display aggregated data from IndexedDB:
+•	Total patients
+•	High-risk patients count
+•	Pregnant cases
+•	TB flagged cases
+Show data in simple cards or lists (no backend required).
+Add a "View Dashboard" button for navigation.
+________________________________________
+UI:
+Use a clean mobile-first layout with a saffron/white/green color theme
+(Indian flag palette).
+Card-based dashboard.
+Large tap-friendly buttons.
+________________________________________
+NO backend. NO auth. NO tests.
+All data stays in browser IndexedDB.
+________________________________________
+🗂️ Why This Works
+Constraint → Solution
+Offline-first → IndexedDB via idb — zero network needed
+Regional language → Web Speech API (supports Hindi)
+Risk detection → Local JS rules — no API latency
+Sync simulation → navigator.onLine + animated mock
+System design → Includes field app + supervisor dashboard
+3–4 hour build → No backend, pure React + Tailwind
+Visual appeal → Saffron/green theme, badge system, toast notifications
+________________________________________
+🔄 Workflow (Must Follow)
+Project Flow: ASHA Worker Healthcare Flow
+1. Data Entry
+• Action: Worker fills out forms during patient checkups
+• Features: Smart forms and voice notes
+• Status: Offline (works without internet)
+2. Local Storage
+• Action: Data is saved directly to the smartphone
+• Features: Stored in IndexedDB; acts as primary record
+• Status: Offline (no signal needed)
+3. Risk Detection
+• Action: App analyzes data instantly
+• Features: On-device rule-based intelligence
+• Status: Offline (real-time processing)
+4. Risk Level
+• Action: App displays risk level (Red / Yellow / Green)
+• Features: Clear alerts and guidance
+• Status: Offline (instant feedback)
+5. Sync
+• Action: Data syncs when internet is available
+• Features: Triggered via "Sync Now" button (simulated)
+• Status: Online (background update)
